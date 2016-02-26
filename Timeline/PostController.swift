@@ -15,6 +15,7 @@ class PostController {
     }
     static func addPost(image: UIImage, caption: String?, completion: (success: Bool, post: Post?) ->Void) {
         
+        
     }
     static func postFromIdentifier(identifier: String, completion:(post: Post?) -> Void){
         
