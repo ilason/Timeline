@@ -11,9 +11,8 @@ import Foundation
 
 class UserController {
     
-    var currentUser: User!{
-        return mockUsers()[0]
-    }
+    var currentUser: User! = nil
+    
     //Add a static sharedController property that will help serve our currentUser consistently through the app.
     static let sharedController = UserController()
     
@@ -39,7 +38,7 @@ class UserController {
         
     }
     
-    static func followedbyUser(user: User, compeltion: [User]?) -> Void {
+    static func followedbyUser(user: User, compeltion: (followed: [User]?) -> Void) {
         
     }
     

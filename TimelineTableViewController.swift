@@ -20,15 +20,29 @@ class TimelineTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     override func viewWillAppear(animated: Bool) {
-        <#code#>
+        super.viewWillAppear(animated)
+        
+        if let _ = UserController.sharedController.currentUser {
+            loadTimelineForCurrentUser()
+        }else {
+            self.tabBarController?.performSegueWithIdentifier("noCurrentUser", sender: nil)
+        }
+        
+        
     }
 
+    
+    func loadTimelineForCurrentUser(){
+        
+    }
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {

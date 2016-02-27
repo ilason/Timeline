@@ -43,6 +43,7 @@ class LogInSignUpViewController: UIViewController {
         }
     }
     
+    
     //create a present validation alert with title func and impliment it
     func presentValidationAlertWithTitle(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
@@ -51,8 +52,11 @@ class LogInSignUpViewController: UIViewController {
         
         presentViewController(alert, animated: true, completion: nil)
     }
+    
+    
     //ActionButton Outlet
     @IBOutlet weak var actionButton: UIButton!
+    
     
     //Enum to switch the views between login and signup
     enum ViewMode {
@@ -100,7 +104,7 @@ class LogInSignUpViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
+
     /*
     // MARK: - Navigation
     
