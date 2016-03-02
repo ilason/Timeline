@@ -10,6 +10,7 @@ import UIKit
 
 <<<<<<< Updated upstream:Timeline/LogInSignUpViewController.swift
 class LogInSignUpViewController: UIViewController {
+<<<<<<< HEAD
 =======
 class LoginSignupViewController: UIViewController {
     
@@ -42,10 +43,13 @@ class LoginSignupViewController: UIViewController {
     }
     
 >>>>>>> Stashed changes:Timeline/LoginSignupViewController.swift
+=======
+>>>>>>> parent of ba74636... Part way through part 2
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+<<<<<<< HEAD
         updateViewBasedOnMode(mode)
         // Do any additional setup after loading the view.
     }
@@ -97,6 +101,27 @@ class LoginSignupViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
         presentViewController(alert, animated: true, completion: nil)
     }
+=======
+        // Do any additional setup after loading the view.
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
+>>>>>>> parent of ba74636... Part way through part 2
 }
 
 

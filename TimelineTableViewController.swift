@@ -16,6 +16,7 @@ class TimelineTableViewController: UITableViewController {
         super.viewDidLoad()
     }
 
+<<<<<<< HEAD
     
     override func viewDidAppear(animated: Bool) {
         
@@ -25,6 +26,12 @@ class TimelineTableViewController: UITableViewController {
             self.tabBarController?.performSegueWithIdentifier("toLoginSignup", sender: nil)
         }
         
+=======
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+>>>>>>> parent of ba74636... Part way through part 2
 
     }
     // MARK: - Table view data source
