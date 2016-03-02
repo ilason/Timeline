@@ -9,17 +9,51 @@
 import UIKit
 
 class UserSearchTableViewController: UITableViewController {
+    @IBOutlet weak var modeSegmentedControl: UISegmentedControl!
+    
+    var usersDatasource: [User] = []
+    
+    enum ViewMode: Int {
+        case Friends
+        case All
+        
+        func users ( completion:( users: [User]?) -> Void) {
+            switch self {
+            case .Friends:
+                UserController.followedByUser(UserController.sharedController.currentUser, completion: { (followed) -> Void in
+                    completion(users: followed)
+                })
+            case .All:
+                UserController.fetchAllUsers({ (users) -> Void in
+                    completion(users: users)
+                })
+            }
+        }
+    }
+    var mode: ViewMode {
+        return ViewMode(rawValue: modeSegmentedControl.selectedSegmentIndex)!
+        
+    }
+    
+    func updateViewForMode(mode: ViewMode) {
+        mode.users { (users) -> Void in
+            if let users = users {
+                self.usersDatasource = users
+            } else{
+                self.usersDatasource = []
+            }
+            self.tableView.reloadData()
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        updateViewForMode(mode)
     }
-
+    
+    @IBAction func selectedIndexChanged(sender: AnyObject) {
+        updateViewForMode(mode)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -34,18 +68,21 @@ class UserSearchTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return self.usersDatasource.count
     }
-
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("userCell", forIndexPath: indexPath)
+        
+        let user = usersDatasource[indexPath.row]
+        
+        cell.textLabel?.text = user.username
 
-        // Configure the cell...
+        
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
