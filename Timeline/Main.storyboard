@@ -348,6 +348,34 @@
             </objects>
             <point key="canvasLocation" x="3402" y="478"/>
         </scene>
+        <!--User Search Results Table View Controller-->
+        <scene sceneID="GAt-ZD-FbH">
+            <objects>
+                <tableViewController storyboardIdentifier="userSearchResultsController" id="Noc-7N-AKM" customClass="UserSearchResultsTableViewController" customModule="Timeline" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="6ag-nK-Y6x">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="userResultsCell" id="wlH-sh-HbJ">
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wlH-sh-HbJ" id="O0l-K8-X7M">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Noc-7N-AKM" id="9yq-Na-6Bp"/>
+                            <outlet property="delegate" destination="Noc-7N-AKM" id="y2p-Bf-ZkN"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N5c-LF-sfT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-110" y="107"/>
+        </scene>
         <!--User Search Table View Controller-->
         <scene sceneID="NfZ-mL-qfY">
             <objects>
@@ -357,11 +385,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
+<<<<<<< Updated upstream:Timeline/Main.storyboard
 <<<<<<< Updated upstream:Timeline/Base.lproj/Main.storyboard
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="R9j-Rg-NTg">
 =======
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="userCell" id="t51-uS-JN9">
 >>>>>>> Stashed changes:Timeline/Main.storyboard
+=======
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="userCell" id="R9j-Rg-NTg">
+>>>>>>> Stashed changes:Timeline/Base.lproj/Main.storyboard
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="R9j-Rg-NTg" id="6HM-Mq-uZU">
@@ -388,7 +420,11 @@
                                 <segment title="Add Friends"/>
                             </segments>
                             <connections>
+<<<<<<< Updated upstream:Timeline/Main.storyboard
                                 <action selector="selectedIndexChanged:" destination="92l-BJ-KEG" eventType="valueChanged" id="LCU-3k-4sI"/>
+=======
+                                <action selector="selectedIndexChanged:" destination="uth-FS-ket" eventType="valueChanged" id="LLa-Rd-jj7"/>
+>>>>>>> Stashed changes:Timeline/Base.lproj/Main.storyboard
                             </connections>
                         </segmentedControl>
                     </navigationItem>
@@ -629,6 +665,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+<<<<<<< Updated upstream:Timeline/Main.storyboard
 <<<<<<< Updated upstream:Timeline/Base.lproj/Main.storyboard
         <segue reference="c8d-D1-AXR"/>
         <segue reference="b2M-Tq-MTF"/>
@@ -637,5 +674,9 @@
         <segue reference="BsN-YS-xpt"/>
         <segue reference="LDY-YW-kQA"/>
 >>>>>>> Stashed changes:Timeline/Main.storyboard
+=======
+        <segue reference="0ka-1b-S9b"/>
+        <segue reference="p9U-QK-tKs"/>
+>>>>>>> Stashed changes:Timeline/Base.lproj/Main.storyboard
     </inferredMetricsTieBreakers>
 </document>

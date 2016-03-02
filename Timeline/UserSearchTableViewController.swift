@@ -8,8 +8,12 @@
 
 import UIKit
 
+<<<<<<< Updated upstream
 class UserSearchTableViewController: UITableViewController {
     @IBOutlet weak var modeSegmentedControl: UISegmentedControl!
+=======
+class UserSearchTableViewController: UITableViewController, UISearchResultsUpdating {
+>>>>>>> Stashed changes
     
     var usersDatasource: [User] = []
     
@@ -48,6 +52,7 @@ class UserSearchTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+<<<<<<< Updated upstream
         updateViewForMode(mode)
     }
     
@@ -57,14 +62,29 @@ class UserSearchTableViewController: UITableViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+=======
+
+     updateViewBasedOnMode(mode)
+        setUpSearchController()
     }
 
-    // MARK: - Table view data source
-
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+    @IBAction func selectedIndexChanged(sender: AnyObject) {
+>>>>>>> Stashed changes
     }
+    
+    
+    func updateViewBasedOnMode(mode: ViewMode) {
+        mode.users { (users) -> Void in
+            if let users = users {
+                self.usersDataSource = users
+            } else {
+                self.usersDataSource = []
+            }
+            
+            self.tableView.reloadData()
+        }
+    }
+<<<<<<< Updated upstream
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
@@ -79,7 +99,62 @@ class UserSearchTableViewController: UITableViewController {
         cell.textLabel?.text = user.username
 
         
+=======
+    
+    //MARK: - Search Controller
+    
+    func setUpSearchController() {
+        let resultsController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("userSearchResults")
+        searchController = UISearchController(searchResultsController: resultsController)
+        searchController.searchResultsUpdater = self
+        searchController.searchBar.sizeToFit()
+        searchController.hidesNavigationBarDuringPresentation = false
+        tableView.tableHeaderView = searchController.searchBar
+        
+        definesPresentationContext = true
+    }
+    
+    func updateSearchResultsForSearchController(searchController: UISearchController) {
+        let searchTerm = searchController.searchBar.text!.lowercaseString
+        
+        let resultsViewController = searchController.searchResultsController as! UserSearchResultsTableViewController
+        
+        resultsViewController.usersResultsDataSource = self.usersDataSource.filter({$0.userName.lowercaseString.containsString(searchTerm)})
+        resultsViewController.tableView.reloadData()
+    }
+  
 
+    @IBOutlet weak var modeSegmentedControl: UISegmentedControl!
+    var searchController: UISearchController!
+    var usersDataSource: [User] = []
+    var mode: ViewMode {
+        get {
+            return ViewMode(rawValue: modeSegmentedControl.selectedSegmentIndex)!
+        }
+    }
+    
+    //Add functionality to the ViewMode that you can use to fetch the correct set of User objects. We will use this in our updateViewForMode to set the usersDataSource array with either friends, or all users
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        return usersDataSource.count
+    }
+    
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("userCell", forIndexPath: indexPath)
+>>>>>>> Stashed changes
+
+        let user = usersDataSource[indexPath.row]
+        
+        cell.textLabel?.text = user.userName
+        
         return cell
     }
     
@@ -119,14 +194,45 @@ class UserSearchTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        
+        let sender = sender as! UITableViewCell
+        
+        var selectedUser: User
+        // if we get an index path from the search results controller use that userDataSource
+        // else, use self.userDataSource
+        
+        if let indexPath = (searchController.searchResultsController as? UserSearchResultsTableViewController)?.tableView.indexPathForCell(sender){
+            
+            let userDataSource = (searchController.searchResultsController as! UserSearchResultsTableViewController).usersResultsDataSource
+            
+            selectedUser = usersDataSource[indexPath.row]
+        } else {
+            let indexPath = tableView.indexPathForCell(sender)!
+            selectedUser = self.usersDataSource[indexPath.row]
+        }
+        let destinationViewController = segue.destinationViewController as! ProfileViewController
+        destinationViewController.user = selectedUser
+    
     }
-    */
+
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+

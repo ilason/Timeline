@@ -15,6 +15,7 @@
 <<<<<<< Updated upstream
 		E577490B1C7E7915001C14AC /* PostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E577490A1C7E7915001C14AC /* PostController.swift */; };
 		E577490D1C7E95D4001C14AC /* ImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E577490C1C7E95D4001C14AC /* ImageController.swift */; };
+		E57749701C8418A1001C14AC /* UserSearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E577496F1C8418A1001C14AC /* UserSearchResultsTableViewController.swift */; };
 		E5B95A1A1C7D0FF30093052A /* TimelineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B95A191C7D0FF30093052A /* TimelineTableViewController.swift */; };
 		E5B95A1C1C7D119D0093052A /* PostDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B95A1B1C7D119D0093052A /* PostDetailTableViewController.swift */; };
 		E5B95A1E1C7D13D90093052A /* UserSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B95A1D1C7D13D90093052A /* UserSearchTableViewController.swift */; };
@@ -64,6 +65,7 @@
 <<<<<<< Updated upstream
 		E577490A1C7E7915001C14AC /* PostController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostController.swift; sourceTree = "<group>"; };
 		E577490C1C7E95D4001C14AC /* ImageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageController.swift; sourceTree = "<group>"; };
+		E577496F1C8418A1001C14AC /* UserSearchResultsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserSearchResultsTableViewController.swift; path = ../UserSearchResultsTableViewController.swift; sourceTree = "<group>"; };
 		E5B95A191C7D0FF30093052A /* TimelineTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineTableViewController.swift; sourceTree = SOURCE_ROOT; };
 		E5B95A1B1C7D119D0093052A /* PostDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailTableViewController.swift; sourceTree = "<group>"; };
 		E5B95A1D1C7D13D90093052A /* UserSearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSearchTableViewController.swift; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 				E5B95A231C7D25960093052A /* LogInSignUpChoiceViewController.swift */,
 				E5B95A211C7D1E2D0093052A /* AddPhotoTableViewController.swift */,
 				E5B95A1F1C7D1C8D0093052A /* ProfileViewController.swift */,
+				E577496F1C8418A1001C14AC /* UserSearchResultsTableViewController.swift */,
 				E5B95A1D1C7D13D90093052A /* UserSearchTableViewController.swift */,
 				E5B95A1B1C7D119D0093052A /* PostDetailTableViewController.swift */,
 				E5B95A191C7D0FF30093052A /* TimelineTableViewController.swift */,
@@ -327,6 +330,7 @@
 				E5B95A261C7D264F0093052A /* LogInSignUpViewController.swift in Sources */,
 				E5B95A221C7D1E2D0093052A /* AddPhotoTableViewController.swift in Sources */,
 				E5B95A1A1C7D0FF30093052A /* TimelineTableViewController.swift in Sources */,
+				E57749701C8418A1001C14AC /* UserSearchResultsTableViewController.swift in Sources */,
 				E5B95A2F1C7D32BF0093052A /* Post.swift in Sources */,
 				01E3FC251BE92C7600187536 /* AppDelegate.swift in Sources */,
 				E577490D1C7E95D4001C14AC /* ImageController.swift in Sources */,

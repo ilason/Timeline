@@ -95,6 +95,7 @@ class LoginSignupViewController: UIViewController {
         
     }
     
+<<<<<<< Updated upstream
     func presentValidationAlertWithTitle(title: String, text: String) {
         
         let alert = UIAlertController(title: title, message: text, preferredStyle: .Alert)
@@ -102,6 +103,13 @@ class LoginSignupViewController: UIViewController {
         presentViewController(alert, animated: true, completion: nil)
     }
 =======
+=======
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        updateViewBasedOnMode()
+        
+>>>>>>> Stashed changes
         // Do any additional setup after loading the view.
     }
 
